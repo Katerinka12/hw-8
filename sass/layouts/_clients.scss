@@ -1,26 +1,72 @@
 .clients__title {
+    text-align: center;
+    color: $titleColor;
+    @include mq(mobile){
+        margin-bottom: 30px;
+    } 
     margin-bottom: 50px;
     @include fontstyle(700, 36px, 1.17);
+    @include mq(not-desktop){
+        @include fontstyle(700, 28px, 1.17);
+    }
     
-    text-align: center;
-
-    color: $titleColor;
 }
 
 .clients__list {
     display: flex;
-}
+    flex-wrap: wrap;
+    @media screen and (max-width:479px){
+    justify-content: center;}
+    
+    
+    @include mq(mobile){
+        width: 450px;
+        flex-wrap: wrap;
+        margin: 0 -15px -15px 0;}
+        @include mq(tablet){
+            width: 738px;
+            flex-wrap: wrap;
+            margin: 0 -15px -15px 0;
+    }
+    @include mq(desktop){
+        width: 1170px;
+        margin: 0 -15px -15px 0;
+}}
 
 .clients__item {
     margin-right: 30px;
-    &:last-child{margin-right: 0;}
+    margin-bottom: 30px;
+     @media screen and (max-width:479px) {
+        margin-bottom: 30px;
+        &:last-child{margin-bottom: 0;}}
+
+     @include mq(mobile){
+        margin: 0 30px 30px 0;
+        flex-basis: calc((100% - 2 * 30px) / 2);  
+        &:nth-child(n+5){margin-bottom: 0;}
+        &:nth-child(even){margin-right: 0;} 
+    }
+    
+    @include mq(tablet){
+        margin: 0 30px 30px 0;
+        flex-basis: calc((100% - 2 * 30px) / 3);  
+        &:nth-child(n+4){margin-bottom: 0;}
+        &:nth-child(2n){margin-right: 30px;}
+        &:nth-child(3n){margin-right: 0;} 
+    }
+    @include mq(desktop){
+        margin-right: 30px;
+        flex-basis: calc((100% - 5 * 30px) / 6);  
+        &:nth-child(n+1){margin-bottom: 0;}
+        &:nth-child(6){margin-right: 0;} 
+        &:nth-child(3){margin-right: 30px;} 
+    }
 }
 
 .clients__link {
     display: flex;
     border: 1px solid #afb1b8;
     border-radius: 4px;
-    width: 170px;
     height: 92px;
     justify-content: center;
     align-items: center;
@@ -29,6 +75,9 @@
     &:focus{
         border-color: $secondaryTextColor;
             fill: $secondaryTextColor;
+    }
+    @include mq(mobile-only){
+        width: 210px;
     }
 }
 

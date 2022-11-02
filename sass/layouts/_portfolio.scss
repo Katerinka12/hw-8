@@ -1,8 +1,15 @@
 .exsamples-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+    @include mq(mobile-only){
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+    @include mq(tablet){ justify-content: center;
+        align-items: center;}
+    @include mq(desktop){
+    margin-bottom: 50px;}
+    
+   
 }
 
 .button.current {
@@ -34,45 +41,99 @@
     background-color: $secondaryTextColor;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);}
+        @include mq(tablet){
+            margin-bottom: 30px;
+        }
+        @include mq(desktop){
+            margin-bottom: 0;
+        }
 }
 
 .exsamples-btn {
     margin-right: 8px;
     &:last-child{margin-right: 0;}
-}
+    @include mq(mobile-only){
+        &:nth-child(-n+2){margin-bottom: 15px;}
+    }
+    @media screen and (max-width: 479px) {
+        margin-bottom: 15px;
+    }
+        
+    }
 
 
-.exsamples-model {
-    display: flex;
+
+.exsamples-model { @include mq(tablet){ display: flex;
     flex-wrap: wrap;
-}
+    flex-basis: calc((100% - 30px)) /2 ;}
+    @include mq(desktop){ display: flex;
+        flex-wrap: wrap;
+        flex-basis: calc((100% - 60px)) /3 ;
+       }}
+    
+
 
 .exsamples-model-item {
     margin-right: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #eeeeee;
-    &:nth-child(3n) {
-            margin-right: 0;
-        }
-    &:nth-child(n + 7) {
-    margin-bottom: 0px;
-}
+    @media screen and (max-width:479px)
+    {
+        
+        margin-bottom: 30px;
+    }
+@include mq(mobile-only){
+    margin-right: 0;
+    &:last-child{margin-bottom: 0;}
 }
 
+@include mq(not-desktop){
+            flex-basis: 354px;
+    &:last-child{margin-bottom: 0;
+    margin-right: 0;}
+    &:nth-child(2n){
+        margin-right: 0;}
+    
+}
+@include mq(desktop){
+    
+    &:nth-child(3n){
+    margin-right: 0;}
+&:nth-child(n+7){margin-bottom: 0;}}
+    
+}
 
+        
+
+
+
+.exsamles-model-type.pad{
+    @include mq(tablet-only){padding-bottom:36px;}
+    
+}
 
 .exsamples-model-text {
     border: 1px solid #eeeeee;
+  
 }
 
 .exsamples-model-link {
     display: block;
+    width: 100%;
     text-decoration: none;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
                 1px 4px 6px rgba(0, 0, 0, 0.16);
         }
+ @include mq(tablet){ 
+          width: 354px ;
+          max-height: 440px;
+            }
+            @include mq(desktop){ 
+                width: 370px ;
+                max-height: 404px;
+                  }
+               
 }
 
 .exsamples-model-title {
@@ -93,6 +154,8 @@
     @include fontstyle(400, 16px, 1.88);
 
     color: $primaryTextColor;
+    @include mq(tablet){&:first-child{padding-bottom: 20px;}}
+    
 }
 
 .product-thumb {
@@ -126,4 +189,4 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-}
+        }

@@ -1,14 +1,19 @@
 .works.section {
+    @include mq(not-desktop){
+        display: none;
+    }
     padding-top: 0;
     padding-bottom: 94px;
 }
 
 .works-list {
+    
     display: flex;
     justify-content: space-between;
 }
 
 .works-title {
+    
     margin-bottom: 50px;
     @include fontstyle(700, 36px, 1.17);
     text-align: center;
@@ -17,10 +22,12 @@
 }
 
 .work-img {
+   
     position: relative;
 }
 
 .work-name {
+    
     position: absolute;
     left: 0;
     bottom: 0;
