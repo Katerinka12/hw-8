@@ -1,0 +1,150 @@
+.footer {
+    padding-bottom: 60px;
+    padding-top: 60px;
+    background-color: #2f303a;
+    height: 252px;
+}
+
+.adress {
+    display: block;
+    max-height: 83px;
+    line-height: 1.71;
+    font-style: normal;
+    color: $whiteTextColor;
+}
+
+.footer__logo {
+    display: inline-block;
+    font-family: $secondaryFontFamily;
+    @include fontstyle(700, 26px, 1.19);
+    text-decoration: none;
+    margin-right: 156px;
+    margin-bottom: 20px;
+    color: $secondaryTextColor;
+}
+
+.footer__weblogo {
+    color: $whiteTextColor;
+}
+
+.adress__link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus,
+        &:hover {
+            color: $secondaryTextColor;
+        }
+}
+
+.adress__item {
+    margin-top: 9px;
+    &:first-child{margin-top: 0;
+
+    }
+}
+
+.footer__contact {
+    display: flex;
+    align-items: baseline;
+}
+
+.invite__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invite__title {
+    @include fontstyle(700, 14px, 1.14);
+    text-transform: uppercase;
+
+    color: $whiteTextColor;
+    margin-bottom: 20px;
+}
+
+.invite__network {
+    margin-right: 10px;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.invite__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus,
+    &:hover{
+            background-color: $secondaryTextColor;
+        }
+}
+
+.invite__icon {
+    fill: $whiteTextColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.invite {
+    margin-right: 93px;
+}
+
+.email-form__title {
+    margin-bottom: 20px;
+    position: relative;
+    @include fontstyle(700, 14px, 1.14);
+
+    text-transform: uppercase;
+
+    color: $whiteTextColor;
+
+}
+
+.email-form {
+    width: 570px;
+    height: 86px;
+    display: flex;
+    position: relative;
+}
+
+.email-form__input {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 358px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #2f303a;
+    padding-left: 16px;
+    color: $whiteTextColor;
+}
+
+
+.email-form__icon {
+    margin-left: 10px;
+}
+
+.email-form__btn {
+    @include fontstyle(700, 16px, 1.88);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @extend .buton;
+    color: $whiteTextColor;
+    background-color: $secondaryTextColor;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-color: transparent;
+}
